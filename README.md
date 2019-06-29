@@ -4,176 +4,69 @@ frontend-nanodegree-styleguide
 * Run `bower install` before working on it!
 * View the style guide at http://udacity.github.io/frontend-nanodegree-styleguide/
 
-Udacity Frontend Nanodegree Style Guide
+Udacity Git Commit Message Style Guide
 Introduction
-This style guide acts as the official guide to follow in your projects. Udacity evaluators will use this guide to grade your projects. There are many opinions on the "ideal" style in the world of Front-End Web Development. Therefore, in order to reduce the confusion on what style students should follow during the course of their projects, we urge all students to refer to this style guide for their projects.
+This style guide acts as the official guide to follow in your projects. Udacity evaluators will use this guide to grade your projects. There are many opinions on the "ideal" style in the world of development. Therefore, in order to reduce the confusion on what style students should follow during the course of their projects, we urge all students to refer to this style guide for their projects.
 
-General Formatting Rules
- Capitalization
-Use only lowercase.
+Commit Messages
+Message Structure
+A commit messages consists of three distinct parts separated by a blank line: the title, an optional body and an optional footer. The layout looks like this:
 
-All code has to be lowercase. This applies to HTML element names, attributes, attribute values (unless text/CDATA).
+type: subject
 
-Not Recommended:
-<A HREF="/">Home</A>
-Recommended:
-<a href="/">Home</a>
- Trailing Whitespace
-Remove trailing white spaces.
+body
 
-Trailing white spaces are unnecessary and can complicate diffs.
+footer
+The title consists of the type of the message and subject.
 
-Not Recommended:
-<p>What?</p>__
-Recommended:
-<p>What?</p>
-If using Sublime Text, this can be done automatically each time you save a file by adding the following to your User Settings JSON file (you should be able to find this within Sublime Text's menu):
+The Type
+The type is contained within the title and can be one of these types:
 
-"trim_trailing_white_space_on_save": true
- Indentation
-Indentation should be consistent throughout the entire file. Whether you choose to use tabs or spaces, or 2-spaces vs. 4-spaces - just be consistent!
+feat: a new feature
+fix: a bug fix
+docs: changes to documentation
+style: formatting, missing semi colons, etc; no code change
+refactor: refactoring production code
+test: adding tests, refactoring test; no production code change
+chore: updating build tasks, package manager configs, etc; no production code change
+The Subject
+Subjects should be no greater than 50 characters, should begin with a capital letter and do not end with a period.
 
-General Meta Rules
- Encoding
-Use UTF-8 (no BOM).
+Use an imperative tone to describe what a commit does, rather than what it did. For example, use change; not changed or changes.
 
-Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Specify the encoding in HTML templates and documents with <meta charset="utf-8">.
+The Body
+Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of explanation and context. Use the body to explain the what and why of a commit, not the how.
 
- Comments
-Explain code as needed, where possible.
+When writing a body, the blank line between the title and the body is required and you should limit the length of each line to no more than 72 characters.
 
-Use comments to explain code: What does it cover, what purpose does it serve, and why is the respective solution used or preferred?
+The Footer
+The footer is optional and is used to reference issue tracker IDs.
 
- Action Items
-Mark todos and action items with TODO:.
+Example Commit Message
+feat: Summarize changes in around 50 characters or less
 
-Highlight todos by using the keyword TODO only, not other formats like @@. Append action items after a colon like this: TODO: action item.
+More detailed explanatory text, if necessary. Wrap it to about 72
+characters or so. In some contexts, the first line is treated as the
+subject of the commit and the rest of the text as the body. The
+blank line separating the summary from the body is critical (unless
+you omit the body entirely); various tools like `log`, `shortlog`
+and `rebase` can get confused if you run the two together.
 
-Recommended:
-<!-- TODO: add other fruits -->
-<ul>
-    <li>Apples</li>
-    <li>Oranges</li>
-</ul>
-HTML Style Rules
- Document Type
-Use HTML5.
+Explain the problem that this commit is solving. Focus on why you
+are making this change as opposed to how (the code explains that).
+Are there side effects or other unintuitive consequenses of this
+change? Here's the place to explain them.
 
-HTML5 (HTML syntax) is preferred for all HTML documents: <!DOCTYPE html>.
+Further paragraphs come after blank lines.
 
-Do not close self-closing elements, ie. write <br>, not <br />.
+ - Bullet points are okay, too
 
- HTML Validity
-Use valid HTML.
+ - Typically a hyphen or asterisk is used for the bullet, preceded
+   by a single space, with blank lines in between, but conventions
+   vary here
 
-Using valid HTML is a measurable baseline quality that ensures proper HTML usage and contributes to learning about technical requirements and constraints.
+If you use an issue tracker, put references to them at the bottom,
+like this:
 
-Not Recommended:
-<title>Page Title</title>
-<article>This is an article.
-Recommended:
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Page Title</title>
-    </head>
-    <body>
-        <article>This is an article.</article>
-    </body>
-</html>
- Semantics
-Use HTML according to its purpose.
-
-Use elements for what they have been created for. For example, use heading elements for headings, p elements for paragraphs, a elements for anchor, etc. Using HTML according to its purpose is important for accessibility, reuse and code efficiency reasons.
-
-Not Recommended:
-<div onclick="goToRecommendations();">All recommendations</div>
-Recommended:
-<a href="recommendations/">All recommendations</a>
- Multimedia Fallback
-Provide alternative contents for multimedia.
-
-For multimedia, such as images, video, or animated objects via canvas, make sure to offer alternative access. For images that means use of meaningful alternative text and for video and audio transcripts and captions, if available.
-
-Providing alternative contents is important for accessibility reasons. A blind user has few cues to tell what an image is about without the alt attributes, and other users may have no way of understanding what video or audio contents are about either.
-
-For images whose alt attributes would introduce redundancy and for images whose purpose is purely decorative which you cannot immediately use CSS for, use no alternative text, as in alt="".
-
-Not Recommended:
-<img src="udacity.png">
-Recommended:
-<img src="udacity.png" alt="Udacity logo">
- Separation of Concerns
-Separate structure from presentation from behavior.
-
-Strictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.
-
-That is, make sure documents and templates contain only HTML and HTML that is solely serving structural purposes. Move everything presentational into style sheets, and everything behavioral into scripts. In addition, keep the contact area as small as possible by linking as few style sheets and scripts as possible from documents and templates.
-
-Separating structure from presentation from behavior is important for maintenance reasons. It is almost always more expensive to change HTML documents and templates than it is to update style sheets and scripts.
-
- Entity References
-Do not use entity references.
-
-There is no need to use entity references like &mdash;, &rdquo;, or &#x263a;, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
-
-The only exceptions apply to characters with special meaning in HTML (like < and &) as well as control or “invisible” characters (like no-break spaces).
-
-Not Recommended:
-The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
-Recommended:
-The currency symbol for the Euro is “€”.
- type Attributes
-Omit type attributes for style sheets and scripts.
-
-Do not use type attributes for style sheets and scripts. Specifying type attributes in these contexts is not necessary as HTML implies text/css and text/javascript as defaults. This can be safely done even for older browsers
-
-Not Recommended:
-<link rel="stylesheet" href="css/style.css" type="text/css">
-Recommended:
-<link rel="stylesheet" href="css/style.css">
-Not Recommended:
-<script src="js/app.js" type="text/javascript"></script>
-Recommended:
-<script src="js/app.js"></script>
-HTML Formatting Rules
- General Formatting
-Use a new line for every block, list or table element and indent every such child element.
-
-Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list or table element on a new line.
-
-Also, indent them if they are child elements of a block, list or table element (if you run into issues around whitespace between list items it's acceptable to put all li elements in one line).
-
-Recommended:
-<blockquote>
-    <p><em>Space</em>, the final frontier.</p>
-</blockquote>
-
-<ul>
-    <li>Moe</li>
-    <li>Curry</li>
-    <li>Larry</li>
-</ul>
-
-<table>
-    <thead>
-        <tr>
-            <th scope="col">Income</th>
-            <th scope="col">Taxes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>$5.00</td>
-            <td>$4.50</td>
-        </tr>
-    </tbody>
-</table>
- HTML Quotation Marks
-When quoting attribute values, use double quotation marks.
-
-Not Recommended:
-<a href='login/' class='btn btn-secondary'>Login</a>
-Recommended:
-<a href="login/" class="btn btn-secondary">Login</a>
+Resolves: #123
+See also: #456, #789
